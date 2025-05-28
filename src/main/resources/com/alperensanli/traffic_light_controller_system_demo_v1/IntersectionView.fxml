@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.alperensanli.traffic_light_controller_system_demo_v1.IntersectionController">
+
+
+    <center>
+        <Pane fx:id="roadPane" prefHeight="400" prefWidth="400" style="-fx-background-color: lightgray;">
+
+            <!-- Traffic lights -->
+            <VBox fx:id="northSignal" alignment="CENTER" layoutX="154.0" layoutY="130.0" spacing="3">
+                <Circle fx:id="northRed" fill="red" radius="5" />
+                <Circle fx:id="northYellow" fill="gray" radius="5" />
+                <Circle fx:id="northGreen" fill="gray" radius="5" />
+                <Label fx:id="northTimer" text="" style="-fx-text-fill: black; -fx-font-size: 12px;"/>
+            </VBox>
+            <VBox fx:id="southSignal" alignment="CENTER" layoutX="241.0" layoutY="242.0" rotate="180.0" spacing="3">
+                <Circle fx:id="southRed" fill="red" radius="5" />
+                <Circle fx:id="southYellow" fill="gray" radius="5" />
+                <Circle fx:id="southGreen" fill="gray" radius="5" />
+                <Label fx:id="southTimer" text="" style="-fx-text-fill: black; -fx-font-size: 12px;"/>
+            </VBox>
+            <VBox fx:id="eastSignal" alignment="CENTER" layoutX="259.0" layoutY="148.0" rotate="90.0" spacing="3">
+                <Circle fx:id="eastRed" fill="red" radius="5" />
+                <Circle fx:id="eastYellow" fill="gray" radius="5" />
+                <Circle fx:id="eastGreen" fill="gray" radius="5" />
+                <Label fx:id="eastTimer" text="" style="-fx-text-fill: black; -fx-font-size: 12px;"/>
+            </VBox>
+            <VBox fx:id="westSignal" alignment="CENTER" layoutX="12.0" layoutY="235.0" prefHeight="36.0" prefWidth="16.0" rotate="-90.0" spacing="3">
+                <Circle fx:id="westRed" fill="red" radius="5" />
+                <Circle fx:id="westYellow" fill="gray" radius="5" />
+                <Circle fx:id="westGreen" fill="gray" radius="5" />
+                <Label fx:id="westTimer" text="" style="-fx-text-fill: black; -fx-font-size: 12px;"/>
+            </VBox>
+
+        </Pane>
+    </center>
+
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="North:" />
+        <TextField fx:id="northInput" maxWidth="60" promptText="0" />
+            <Label fx:id="northLight" style="-fx-font-size: 24px; -fx-text-fill: #00ffe1;" text="●" />
+        </VBox>
+    </top>
+
+
+
+    <left>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="West:" />
+            <TextField fx:id="westInput" maxWidth="60" promptText="0" />
+            <Label fx:id="westLight" style="-fx-font-size: 24px; -fx-text-fill: #00ffe1;" text="●" />
+        </VBox>
+    </left>
+
+    <right>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="East:" />
+            <TextField fx:id="eastInput" maxWidth="60" promptText="0" />
+            <Label fx:id="eastLight" style="-fx-font-size: 24px; -fx-text-fill: #00ffe1;" text="●" />
+        </VBox>
+    </right>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="10">
+            <VBox alignment="CENTER" spacing="10">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+                <Label text="South:" />
+                <TextField fx:id="southInput" maxWidth="60" promptText="0" />
+                <Label fx:id="southLight" style="-fx-font-size: 24px; -fx-text-fill: #00ffe1;" text="●" />
+            </VBox>
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#onRandomClicked" text="Random" />
+                <Button onAction="#onStartClicked" text="Start" />
+                <Button onAction="#onPauseClicked" text="Pause" />
+                <Button onAction="#onResetClicked" text="Reset" />
+            </HBox>
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+        </VBox>
+    </bottom>
+
+</BorderPane>
