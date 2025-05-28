@@ -94,8 +94,7 @@ Proje, Java ve JavaFX kullanılarak **Model-View-Controller (MVC)** mimarisi ile
 - `.java` kaynak dosyaları
 - `IntersectionView.fxml`
 - Bu `README.md`
-- 
-- ![Simülasyon Ekran Görüntüsü](images/Screenshot 2025-05-28 at 03.09.38.png)
+  
 
 ---
 
